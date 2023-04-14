@@ -5,57 +5,24 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema({
-  firstName: {
+  name: {
     type: String,
     required: true,
-    trim: true,
   },
-  email: {
+  by: {
     type: String,
-    required: true,
-
-    unique: true,
-    trim: true,
-    validate(value) {
-      if (!validator.isEmail(value)) {
-        throw new Error("Email is invalid");
-      }
+  },
+  applied: [
+    {
+      type: String,
     },
+  ],
+  approved: {
+    type: String,
   },
-  rollNo: {
+
+  hours: {
     type: Number,
-    unique: false,
-    // type: String,
-    // require: true,
-    // index: true,
-    // unique: true,
-    // sparse: true,
-    // required: true,
-    // unique: true,
-  },
-  mobileNumber: {
-    type: Number,
-    required: true,
-    length: 10,
-    // unique: true,
-    trim: true,
-  },
-  role: {
-    type: String,
-    required: true,
-  },
-  section: {
-    type: String,
-    required: true,
-  },
-  subject: {
-    type: String,
-  },
-  password: {
-    type: String,
-    required: true,
-    minLength: 7,
-    trim: true,
   },
   token: {
     type: String,
