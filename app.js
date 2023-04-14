@@ -8,10 +8,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
 const app = express();
-const userRoutes = require("./routers/userRoutes");
-const mainRoutes = require("./routers/mainRoutes");
-const timeTable = require("./routers/timeTable");
-const attendance = require("./routers/attendance");
 const sub = require("./routers/subject");
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -40,14 +36,6 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/api", userRoutes);
-app.use("/", mainRoutes);
-app.use("/", timeTable);
-app.use("/", attendance);
-app.use("/", sub);
-app.use("/", (req, res) => {
-  res.redirect("/login");
-});
 app.use("/*", (req, res, next) => {
   //   res.send("<h1>404</h1>");
   res.render("404.ejs");
