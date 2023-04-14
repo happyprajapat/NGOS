@@ -37,6 +37,9 @@ const userSchema = new mongoose.Schema({
   hours: {
     type: Number,
   },
+  payout: {
+    type: String,
+  },
   password: {
     type: String,
     required: true,
