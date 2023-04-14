@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body img {
+  width: 120rem;
+}
+body h1 {
+  font-size: 5rem;
+  position: absolute;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  top: 3rem;
+  left: 10rem;
+}
