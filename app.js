@@ -8,7 +8,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
 const app = express();
-const sub = require("./routers/subject");
 app.set("view engine", "ejs");
 app.set("views", "views");
 app.use((req, res, next) => {
