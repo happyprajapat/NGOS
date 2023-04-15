@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/login.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -136,15 +137,15 @@
     </div> -->
 
     <div class="login1">
-      <form action="/postuser" method="post">
+      <form action="/api/registerStudent" method="post">
         <div class="login1Content">
           <div class="loginIcon">
             <ion-icon name="log-in-outline"></ion-icon>
           </div>
           <h1>Register</h1>
           <div class="select-identity">
-            <a href="#" class="volunteer ">Volunteer</a>
-            <a href="#" class="student">Student</a>
+            <a href="/register-volunteer" class="volunteer  ">Volunteer</a>
+            <a href="#" class="student vactive">Student</a>
           </div>
           <div class="namess">
 

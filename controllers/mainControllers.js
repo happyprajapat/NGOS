@@ -1,7 +1,11 @@
-const register = (req, res) => {
-  res.render("register");
+const registerVolunteer = (req, res) => {
+  res.render("registerVolunteer");
+};
+const registerStudent = (req, res) => {
+  res.render("registerStudent");
 };
 
 module.exports = {
-  register,
+  registerVolunteer,
+  registerStudent,
 };
