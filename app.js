@@ -35,6 +35,9 @@ app.use(
 );
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/", (req, res, next) => {
+  res.render("index");
+});
 app.use("/api", apiRoutes);
 app.use("/*", (req, res, next) => {
   //   res.send("<h1>404</h1>");

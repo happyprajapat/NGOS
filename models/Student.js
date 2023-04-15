@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
-const userSchema = new mongoose.Schema({
+const studentSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.pre("save", async function (next) {
+studentSchema.pre("save", async function (next) {
   const user = this;
   if (user.isModified("password")) {
     user.password = await bcrypt.hash(user.password, 8);
@@ -59,7 +59,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.methods.generateAuthToken = async function () {
+studentSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign(user._id.toString(), "cezisbest");
   user.token = token;
@@ -68,7 +68,7 @@ userSchema.methods.generateAuthToken = async function () {
   return token;
 };
 
-userSchema.statics.findByCredentials = async (email, password) => {
+studentSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
   console.log(user);
   if (!user) {
@@ -83,6 +83,6 @@ userSchema.statics.findByCredentials = async (email, password) => {
   return user;
 };
 
-const User = mongoose.model("User", userSchema);
+const Student = mongoose.model("Student", studentSchema);
 
-module.exports = User;
+module.exports = Student;
