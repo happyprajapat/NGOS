@@ -1,6 +1,6 @@
-const Student = require("../models/User");
-const Volunteer = require("../models/User");
-const Problem = require("../models/User");
+const Student = require("../models/Student");
+const Volunteer = require("../models/Volunteer");
+const Problem = require("../models/Problems");
 require("dotenv").config();
 
 const nodemailer = require("nodemailer");

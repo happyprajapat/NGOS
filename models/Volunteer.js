@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
-const userSchema = new mongoose.Schema({
+const Volunteer = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.pre("save", async function (next) {
+Volunteer.pre("save", async function (next) {
   const user = this;
   if (user.isModified("password")) {
     user.password = await bcrypt.hash(user.password, 8);
@@ -65,7 +65,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.methods.generateAuthToken = async function () {
+Volunteer.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign(user._id.toString(), "cezisbest");
   user.token = token;
@@ -74,7 +74,7 @@ userSchema.methods.generateAuthToken = async function () {
   return token;
 };
 
-userSchema.statics.findByCredentials = async (email, password) => {
+Volunteer.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
   console.log(user);
   if (!user) {
@@ -89,6 +89,6 @@ userSchema.statics.findByCredentials = async (email, password) => {
   return user;
 };
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("Volunteer", Volunteer);
 
 module.exports = User;
