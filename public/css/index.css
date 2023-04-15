@@ -52,7 +52,7 @@
 }
 
 .advice-image-hp {
-  width: 100%;
+  width: 10rem;
   height: auto;
 }
 
@@ -143,7 +143,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
 
-  height: 40rem;
+  height: 35rem;
 }
 
 .box-ex {
@@ -155,14 +155,14 @@
 }
 
 .box-heading-ex {
-  font-size: 1.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
 
   margin-bottom: 2rem;
 }
 
 .box-content-ex {
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding-right: 30%;
   font-weight: 500;
 }
@@ -180,6 +180,7 @@
 .box-3-ex {
   background-image: url("/img/Expertise-img33.png");
   background-size: cover;
+  color: #333;
 }
 
 .number-label-ex {
