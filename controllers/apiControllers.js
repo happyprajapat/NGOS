@@ -122,7 +122,8 @@ const registerStudent = async (req, res, next) => {
     // await sendMail(req.body.email);
     const token = await user.generateAuthToken();
     await user.save();
-    return res.json(user, {}, {}, token);
+
+    return res.redirect("/");
   } catch (err) {
     console.log(err.message);
     res.status(400).send("Error");
@@ -135,7 +136,7 @@ const registerVolunteer = async (req, res, next) => {
     // await sendMail(req.body.email);
     const token = await user.generateAuthToken();
     await user.save();
-    return res.json(user, {}, {}, token);
+    return res.redirect("/");
   } catch (err) {
     console.log(err.message);
     res.status(400).send("Error");
