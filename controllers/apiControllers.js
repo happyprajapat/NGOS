@@ -142,28 +142,50 @@ const registerVolunteer = async (req, res, next) => {
   }
 };
 
-// const login = async (req, res, next) => {
-//   console.log("Loginp : \n", req.session.currentUser);
-//   console.log(req.body);
-//   try {
-//     const user = await User.findByCredentials(
-//       req.body.email,
-//       req.body.password
-//     );
-//     console.log("user: ", user);
-//     const token = await user.generateAuthToken();
-//     req.session.token = token;
+const loginStudent = async (req, res, next) => {
+  console.log("Loginp : \n", req.session.currentUser);
+  console.log(req.body);
+  try {
+    const user = await Student.findByCredentials(
+      req.body.email,
+      req.body.password
+    );
+    console.log("user: ", user);
+    const token = await user.generateAuthToken();
+    req.session.token = token;
 
-//     req.session.user = await user;
-//     // res.redirect("/profile");
-//     req.session.login = true;
-//     console.log("hnji");
-//     return res.send(user);
-//   } catch (err) {
-//     // console.log(e);
-//     res.status(400).send({ error: err.message });
-//   }
-// };
+    req.session.user = await user;
+    // res.redirect("/profile");
+    req.session.login = true;
+    console.log("hnji");
+    return res.send(user);
+  } catch (err) {
+    // console.log(e);
+    res.status(400).send({ error: err.message });
+  }
+};
+const loginVolunteer = async (req, res, next) => {
+  console.log("Loginp : \n", req.session.currentUser);
+  console.log(req.body);
+  try {
+    const user = await Volunteer.findByCredentials(
+      req.body.email,
+      req.body.password
+    );
+    console.log("user: ", user);
+    const token = await user.generateAuthToken();
+    req.session.token = token;
+
+    req.session.user = await user;
+    // res.redirect("/profile");
+    req.session.login = true;
+    console.log("hnji");
+    return res.send(user);
+  } catch (err) {
+    // console.log(e);
+    res.status(400).send({ error: err.message });
+  }
+};
 // const logout = async (req, res, next) => {
 //   req.session.destroy();
 //   res.redirect("/");
@@ -260,4 +282,6 @@ const registerVolunteer = async (req, res, next) => {
 module.exports = {
   registerStudent,
   registerVolunteer,
+  loginStudent,
+  loginVolunteer,
 };
