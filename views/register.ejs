@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <style>
+    .error {
+      width: auto;
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #fff;
+      /* color: #6c5ddc; */
+      /* left: 42.5%; */
+      height: 5rem;
+      /* border: 2px solid red; */
+      /* border: 2px solid #6c5ddc; */
+      border-radius: 1rem;
+      background-color: #6c5ddc;
+      box-shadow: 0 0 50rem rgba(0, 0, 0, 0.1);
+    }
+
+    .err {
+      position: absolute;
+      top: 2.5rem;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+    }
+
+    .none {
+      display: none;
+    }
+  </style>
+  <div class="err">
+    <div class="error none">Error</div>
+  </div>
+  <section class="login-section">
+
+    <!-- LEFT side -->
+    <div class="images-content">
+      <div class="images">
+        <div class="image">
+          <img class="image1" src="/img/login.jpg">
+          <!-- <img class="image1" src="/img/bouw_r0tf_230116.jpg"> -->
+        </div>
+      </div>
+      <div class="image-dots">
+        <svg class="carosoul-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+        <div class="dots">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+        <svg class="carosoul-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+
+      </div>
+    </div>
+    </div>
+    <!-- RIGHT side -->
+    <!-- <div class="login-content">
+      <div class="hello-container">
+        <img class="hello-animation" src="/img/87845-hello.gif" alt="Hello">
+      </div>
+      <h1>Log in</h1>
+      <h2>Enter your log in credentials below.</h2>
+      <form>
+        <div>
+          <label for="email">Email</label>
+          <div class="input-container">
+            <input required type="email" id="email" placeholder="email@example.com" name="email" required>
+            <svg class="icon-email" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <div class="input-container">
+            <input required type="password" id="password" name="password" placeholder="*********" required>
+            <svg class="icon-pw" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+            </svg>
+
+          </div>
+          <br>
+        </div>
+
+        <a href="#" class="forgot-pw anchor">Forgot Password?</a><br>
+        <div class="checkbox-submit">
+          <label class="checkbox">
+            <input required type="checkbox">
+            <span>Remember me</span>
+          </label>
+          <input required class="submit-btn" type="submit" value="Log in">
+        </div>
+      </form>
+      <div class="or-container">
+        <div class="line"></div>
+        <span class="or-component">OR</span>
+        <div class="line"></div>
+      </div>
+      <div class="otp-login">
+        <a href="/signin" class="anchor">Login with OTP</a>
+      </div>
+      <div class="register-now">
+        <p>Do not have a account?</p>
+        <a href="/register" class="anchor">Register Now!</a>
+      </div>
+    </div> -->
+
+    <div class="login1">
+      <form action="/postuser" method="post">
+        <div class="login1Content">
+          <div class="loginIcon">
+            <ion-icon name="log-in-outline"></ion-icon>
+          </div>
+          <h1>Register</h1>
+          <div class="select-identity">
+            <a href="#" class="volunteer ">Volunteer</a>
+            <a href="#" class="student">Student</a>
+          </div>
+          <div class="namess">
+
+            <div class="label1">
+              <label for="">Enter First name</label>
+              <!-- <div class="namess"> -->
+
+              <div class="input1input">
+                <input required type="text" class="ic3 ic4" name="firstName" id="email" placeholder="First Name">
+                <ion-icon name="person-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="label1">
+
+              <label for="">Enter Last name</label>
+              <div class="input1input">
+                <input required type="text" class="ic3 ic4" name="lastName" id="email" placeholder="Last Name">
+                <ion-icon name="person-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <div class="label1">
+            <label for="">Enter Email</label>
+            <div class="input1input">
+              <input required class="ic1 ic2 " type="email" name="email" id="password"
+                placeholder="Enter Email Address">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="label1">
+            <label for="">Enter Mobile</label>
+            <div class="input1input">
+              <input required class="ic1 ic2 " type="text" name="mobileNumber" id="password"
+                placeholder="Enter Mobile Number">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="label1">
+            <label for="">Enter Password</label>
+            <div class="input1input">
+              <input required class="ic1 ic2 " type="password" name="password" id="password"
+                placeholder="Enter Password">
+              <ion-icon name="key-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="label1">
+            <label for="">Confirm Password</label>
+            <div class="input1input">
+              <input required class="ic1 ic2 " type="password" name="" id="password" placeholder="Confirm Password">
+              <ion-icon name="key-outline"></ion-icon>
+            </div>
+          </div>
+
+          <button type="submit" href="" class="submit-btn logbt">Register</button>
+
+        </div>
+      </form>
+    </div>
+
+  </section>
+  <!-- <script src="/js/signin.js"></script> -->
+</body>
+
+</html>
